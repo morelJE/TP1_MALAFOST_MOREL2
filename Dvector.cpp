@@ -5,10 +5,16 @@ class Dvector
         double *pCor;
 
     public:
-        Dvector() {
+        Dvector();
+        int getSize();
+};
 
-        }
+Dvector::Dvector()
+{
+    size = 0;
+    pCor = new double[size];
+};
 
-
-
-}
+int Dvector::getSize() {
+    return size;
+};

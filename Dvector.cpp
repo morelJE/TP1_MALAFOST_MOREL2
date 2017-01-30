@@ -7,6 +7,7 @@ class Dvector
     public:
         Dvector();
         int getSize();
+        Dvector(int, double*);
 };
 
 Dvector::Dvector()
@@ -18,3 +19,8 @@ Dvector::Dvector()
 int Dvector::getSize() {
     return size;
 };
+
+Dvector::Dvector(int size, double *pCor) {
+  this-> size = size;
+  this->pCor=pCor;
+}

@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 
-    Dvector d;
+    Dvector d(3,NULL);
     cout << d.getSize();
     cout << "\n";
 

@@ -6,4 +6,5 @@ public:
     Dvector();
     int getSize();
     Dvector(int,double*);
+    Dvector(int);
 };

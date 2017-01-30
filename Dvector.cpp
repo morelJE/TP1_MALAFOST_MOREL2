@@ -8,6 +8,7 @@ class Dvector
         Dvector();
         int getSize();
         Dvector(int, double*);
+	Dvector(int);
 };
 
 Dvector::Dvector()
@@ -21,6 +22,12 @@ int Dvector::getSize() {
 };
 
 Dvector::Dvector(int size, double *pCor) {
-  this-> size = size;
-  this->pCor=pCor;
+  this->size = size;
+  this->pCor = pCor;
 }
+
+Dvector::Dvector(int size) {
+  this->size = size;
+  this->pCor = new double[size];
+}
+

@@ -8,7 +8,7 @@ Dvector::Dvector()
 };
 
 int Dvector::getSize() {
-    return size;
+    return this->size;
 };
 
 Dvector::Dvector(int size, double *pCor) {

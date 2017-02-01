@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 class Dvector
 {
     int size;
@@ -7,4 +10,5 @@ public:
     int getSize();
     Dvector(int,double*);
     Dvector(int);
+    void display(std::ostream& str);
 };

@@ -19,4 +19,13 @@ Dvector::Dvector(int size, double *pCor) {
 Dvector::Dvector(int size) {
     this->size = size;
     this->pCor = new double[size];
+};
+
+void Dvector::display(std::ostream& str) {
+    if (this-> size != 0) {
+        for (int i = 0; i < this->size; i++) {
+            str << this->pCor[i];
+            str << "\n";
+        }
+    }
 }

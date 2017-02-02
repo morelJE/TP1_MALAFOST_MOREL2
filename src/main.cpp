@@ -6,7 +6,7 @@ int main()
 {
 
     Dvector d(3);
-    cout << d.getSize();
+    cout << d.size();
     cout << "\n";
     double i = 2;
     Dvector e(3,&i);

@@ -3,12 +3,24 @@ using namespace std;
 
 class Dvector
 {
-    int size;
+
     double *pCor;
-public:
+
+  public:
+
+    int taille;
+
     Dvector();
-    int getSize();
-    Dvector(int,double*);
-    Dvector(int);
+
+    int size();
+
+    Dvector(const Dvector & V);
+
+    Dvector(int,double*p = 0);
+
     void display(std::ostream& str);
+
+    void fillRandomly();
+
+    ~Dvector();
 };

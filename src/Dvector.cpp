@@ -1,31 +1,52 @@
 #include "Dvector.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
-Dvector::Dvector()
-{
-    size = 0;
-    pCor = new double[size];
+Dvector::Dvector() {
+    taille = 0;
+    pCor = new double[taille];
+    pCor[0]=0.0;
 };
 
-int Dvector::getSize() {
-    return this->size;
+int Dvector::size() {
+    return this->taille;
 };
 
-Dvector::Dvector(int size, double *pCor) {
-    this->size = size;
-    this->pCor = pCor;
+Dvector::Dvector(const Dvector & V) {
+    taille=V.taille;
+    pCor = new double[taille];
+    for (int i=0; i<taille; i++) {
+      pCor[i] = V.pCor[i];
+    }
 };
 
-Dvector::Dvector(int size) {
-    this->size = size;
-    this->pCor = new double[size];
+Dvector::Dvector(int s, double *p) {
+    taille = s;
+    pCor = new double [taille];
+    for (int i=0; i<taille; i++) {
+      pCor[i]=*p;
+    }
 };
+
 
 void Dvector::display(std::ostream& str) {
-    if (this-> size != 0) {
-        for (int i = 0; i < this->size; i++) {
-            str << this->pCor[i];
-            str << "\n";
+    if (this->taille != 0) {
+        for (int i = 0; i < this->taille; i++) {
+            std::cout << pCor[i] << "\n";
         }
     }
 }
+
+Dvector::~Dvector() {
+  delete [] pCor;
+}
+
+void Dvector::fillRandomly() {
+    float nombre_aleatoire = 0.0;
+  	for(int i=0; i<taille; i++){
+  		nombre_aleatoire = rand()/RAND_MAX;
+  		pCor[i] = nombre_aleatoire;
+  	}
+};

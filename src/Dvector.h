@@ -16,11 +16,12 @@ class Dvector
 
     Dvector(const Dvector & V);
 
-    Dvector(int,double*p = 0);
+    Dvector(int,double *p = 0);
 
     void display(std::ostream& str);
 
     void fillRandomly();
 
     ~Dvector();
+
 };

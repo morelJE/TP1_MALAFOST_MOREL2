@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <fstream>
+#include <string>
+using namespace std;
 
 Dvector::Dvector() {
     taille = 0;
@@ -50,3 +52,19 @@ void Dvector::fillRandomly() {
   		pCor[i] = nombre_aleatoire;
   	}
 };
+
+
+//Dvector::Dvector(std::string) {
+//  int compteur = 0;
+//  ifstream fichier(std::string);
+//  while (flux.eof() == false) {
+//      compteur = compteur + 1;
+//      double valeur_cour;
+//      fichier >> valeur_cour;
+//  }
+//  Dvector v = Dvector(compteur);
+//  for (int i=0; i<compteur; i++) {
+//    int valeur_cour_2 = 0;
+//    v[i] = fichier >> valeur_cour_2;
+//  }
+//};

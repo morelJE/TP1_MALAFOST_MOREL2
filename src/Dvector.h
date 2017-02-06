@@ -16,7 +16,7 @@ class Dvector
 
     Dvector(const Dvector & V);
 
-    Dvector(int,double *p = 0);
+    Dvector(int,double *p = new double(0));
 
     void display(std::ostream& str);
 

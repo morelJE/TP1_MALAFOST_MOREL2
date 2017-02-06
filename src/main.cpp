@@ -11,6 +11,11 @@ int main()
     double i = 2;
     Dvector e(3,&i);
     e.display(cout);
+    Dvector x;
+    x = Dvector (3, 1.);
+    x.display(cout);
+    Dvector x = Dvector (3, 1.);
+    x.display(cout);
 
 
 

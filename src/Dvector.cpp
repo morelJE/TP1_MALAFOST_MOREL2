@@ -53,6 +53,26 @@ void Dvector::fillRandomly() {
   	}
 };
 
+double Dvector::operator ()(int i)
+{
+  try  {
+    if (i < 0 || i > this->size()) {
+      throw string("Cette case du vecteur n'existe pas");
+    }
+    else {
+      return(pCor[i]);
+    }
+  }
+  catch(string const& chaine) {
+    cerr << chaine << endl;
+  }
+  return(0);
+};
+
+int Dvector::operator +(int a, int b)
+{
+  return(0);
+}
 
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;

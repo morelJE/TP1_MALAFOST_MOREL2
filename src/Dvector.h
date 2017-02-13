@@ -24,4 +24,7 @@ class Dvector
 
     ~Dvector();
 
+    double operator()(int i);
+
+    int operator(+)(int a, int b);
 };

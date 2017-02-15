@@ -24,11 +24,11 @@ Dvector::Dvector(const Dvector & V) {
     }
 };
 
-Dvector::Dvector(int s, double *p) {
+Dvector::Dvector(int s, double p) {
     taille = s;
     pCor = new double [taille];
     for (int i=0; i<taille; i++) {
-      pCor[i]=*p;
+      pCor[i] = p;
     }
 };
 
@@ -36,7 +36,7 @@ Dvector::Dvector(int s, double *p) {
 void Dvector::display(std::ostream& str) {
     if (this->taille != 0) {
         for (int i = 0; i < this->taille; i++) {
-            std::cout << pCor[i] << "\n";
+            str << pCor[i] << "\n";
         }
     }
 }

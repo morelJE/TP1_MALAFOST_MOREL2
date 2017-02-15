@@ -69,10 +69,24 @@ double Dvector::operator ()(int i)
   return(0);
 };
 
-int Dvector::operator +(int a, int b)
+Dvector Dvector::operator +(double o)
 {
-  return(0);
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = v.pCor[i] + o;
+  }
+  return v;
 }
+
+Dvector Dvector::operator *(double o)
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = v.pCor[i]*o;
+  }
+  return v;
+}
+
 
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;

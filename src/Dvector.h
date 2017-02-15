@@ -26,5 +26,8 @@ class Dvector
 
     double operator()(int i);
 
-    int operator(+)(int a, int b);
+    Dvector operator +(double o);
+
+    Dvector operator *(double o);
+
 };

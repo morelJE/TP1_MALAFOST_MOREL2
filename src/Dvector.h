@@ -30,4 +30,15 @@ class Dvector
 
     Dvector operator *(double o);
 
+    Dvector operator /(double o);
+
+    Dvector operator +(const Dvector n);
+
+    Dvector operator -(const Dvector n);
+
+    Dvector operator -();
+
+    Dvector operator >>(double o);
+
+    Dvector operator <<(double o);
 };

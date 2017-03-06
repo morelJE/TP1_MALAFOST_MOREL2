@@ -87,7 +87,65 @@ Dvector Dvector::operator *(double o)
   return v;
 }
 
+Dvector Dvector::operator /(double o)
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = v.pCor[i]/o;
+  }
+  return v;
+}
 
+Dvector Dvector::operator +(const Dvector n)
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = v.pCor[i] + n.pCor[i];
+  }
+  return v;
+}
+
+Dvector Dvector::operator -(const Dvector n)
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = v.pCor[i] - n.pCor[i];
+  }
+  return v;
+}
+
+Dvector Dvector::operator -()
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = -v.pCor[i];
+  }
+  return v;
+}
+
+Dvector Dvector::operator >>(double o)
+{
+  Dvector v(taille);
+  for (int i=0; i<(taille-o); i++) {
+    v.pCor[taille-i-1] = v.pCor[taille-i-1-(int)o];
+  }
+  for (int i=0; i<o; i++) {
+    v.pCor[i] = 0;
+  }
+  return v;
+}
+
+Dvector Dvector::operator <<(double o)
+{
+  Dvector v(taille);
+  for (int i=0; i<(taille-o); i++) {
+    v.pCor[i] = v.pCor[i+(int)o];
+  }
+  for (int i=0; i<o; i++) {
+    v.pCor[taille-i-1] = 0;
+  }
+  return v;
+}
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;
 //  ifstream fichier(std::string);

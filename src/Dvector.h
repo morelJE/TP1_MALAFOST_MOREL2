@@ -41,4 +41,7 @@ class Dvector
     Dvector operator >>(double o);
 
     Dvector operator <<(double o);
-};
+
+    Dvector operator +=(double o);
+
+    Dvector operator -=(double o);

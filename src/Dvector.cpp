@@ -41,14 +41,11 @@ void Dvector::display(std::ostream& str) {
     }
 }
 
-Dvector::~Dvector() {
-  delete [] pCor;
-}
-
 void Dvector::fillRandomly() {
     float nombre_aleatoire = 0.0;
+    srand(time(NULL));
   	for(int i=0; i<taille; i++){
-  		nombre_aleatoire = rand()/RAND_MAX;
+  		nombre_aleatoire = rand() / ((double) RAND_MAX);
   		pCor[i] = nombre_aleatoire;
   	}
 }
@@ -73,7 +70,16 @@ Dvector Dvector::operator +(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
-    v.pCor[i] = v.pCor[i] + o;
+    v.pCor[i] = pCor[i] + o;
+  }
+  return v;
+}
+
+Dvector Dvector::operator -(double o)
+{
+  Dvector v(taille);
+  for (int i=0; i<taille; i++) {
+    v.pCor[i] = pCor[i] - o;
   }
   return v;
 }
@@ -82,7 +88,7 @@ Dvector Dvector::operator *(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
-    v.pCor[i] = v.pCor[i]*o;
+    v.pCor[i] = pCor[i]*o;
   }
   return v;
 }
@@ -91,7 +97,7 @@ Dvector Dvector::operator /(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
-    v.pCor[i] = v.pCor[i]/o;
+    v.pCor[i] = pCor[i]/o;
   }
   return v;
 }

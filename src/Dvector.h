@@ -23,11 +23,13 @@ public:
 
     void fillRandomly();
 
-    ~Dvector();
+    ~Dvector() {}
 
     double operator()(int i);
 
     Dvector operator +(double o);
+
+    Dvector operator -(double o);
 
     Dvector operator *(double o);
 

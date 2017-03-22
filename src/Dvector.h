@@ -3,10 +3,11 @@ using namespace std;
 
 class Dvector
 {
+private:
 
     double *pCor;
 
-  public:
+public:
 
     int taille;
 
@@ -32,9 +33,9 @@ class Dvector
 
     Dvector operator /(double o);
 
-    Dvector operator +(const Dvector n);
+    friend Dvector operator +(const Dvector n, const Dvector v);
 
-    Dvector operator -(const Dvector n);
+    friend Dvector operator -(const Dvector n, const Dvector v);
 
     Dvector operator -();
 
@@ -45,3 +46,4 @@ class Dvector
     Dvector operator +=(double o);
 
     Dvector operator -=(double o);
+};

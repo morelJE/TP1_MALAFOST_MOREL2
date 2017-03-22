@@ -10,11 +10,11 @@ Dvector::Dvector() {
     taille = 0;
     pCor = new double[taille];
     pCor[0]=0.0;
-};
+}
 
 int Dvector::size() {
     return this->taille;
-};
+}
 
 Dvector::Dvector(const Dvector & V) {
     taille=V.taille;
@@ -22,7 +22,7 @@ Dvector::Dvector(const Dvector & V) {
     for (int i=0; i<taille; i++) {
       pCor[i] = V.pCor[i];
     }
-};
+}
 
 Dvector::Dvector(int s, double p) {
     taille = s;
@@ -30,7 +30,7 @@ Dvector::Dvector(int s, double p) {
     for (int i=0; i<taille; i++) {
       pCor[i] = p;
     }
-};
+}
 
 
 void Dvector::display(std::ostream& str) {
@@ -51,7 +51,7 @@ void Dvector::fillRandomly() {
   		nombre_aleatoire = rand()/RAND_MAX;
   		pCor[i] = nombre_aleatoire;
   	}
-};
+}
 
 double Dvector::operator ()(int i)
 {
@@ -67,9 +67,9 @@ double Dvector::operator ()(int i)
     cerr << chaine << endl;
   }
   return(0);
-};
+}
 
-Dvector & Dvector::operator +(double o)
+Dvector Dvector::operator +(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
@@ -78,7 +78,7 @@ Dvector & Dvector::operator +(double o)
   return v;
 }
 
-Dvector & Dvector::operator *(double o)
+Dvector Dvector::operator *(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
@@ -87,7 +87,7 @@ Dvector & Dvector::operator *(double o)
   return v;
 }
 
-Dvector & Dvector::operator /(double o)
+Dvector Dvector::operator /(double o)
 {
   Dvector v(taille);
   for (int i=0; i<taille; i++) {
@@ -96,23 +96,41 @@ Dvector & Dvector::operator /(double o)
   return v;
 }
 
-Dvector operator +(const Dvector v, const Dvector n)
+Dvector operator +(const Dvector n, const Dvector v)
 {
-  for (int i=0; i<taille; i++) {
-    v.pCor[i] = v.pCor[i] + n.pCor[i];
+  if (v.taille > n.taille) {
+    for (int i = 0; i < n.taille; i++) {
+      v.pCor[i] = v.pCor[i] + n.pCor[i];
+    }
+    return v;
+  } else {
+    for (int i = 0; i < v.taille; i++) {
+      v.pCor[i] = v.pCor[i] + n.pCor[i];
+    }
+    return n;
   }
-  return v;
+
 }
 
-Dvector operator -(const Dvector v, const Dvector n)
+Dvector operator -(const Dvector n, const Dvector v)
 {
-  for (int i=0; i<taille; i++) {
-    v.pCor[i] = v.pCor[i] - n.pCor[i];
+  if (v.taille > n.taille) {
+    for (int i = 0; i < n.taille; i++) {
+      v.pCor[i] = n.pCor[i] - v.pCor[i];
+    }
+    for (int j = n.taille; j < v.taille; j++) {
+      v.pCor[j] = - v.pCor[j];
+    }
+    return v;
+  } else {
+    for (int i = 0; i < v.taille; i++) {
+      n.pCor[i] = n.pCor[i] - v.pCor[i];
+    }
+    return n;
   }
-  return v;
 }
 
-Dvector & Dvector::operator -()
+Dvector Dvector::operator -()
 {
   for (int i=0; i<taille; i++) {
     pCor[i] = -pCor[i];
@@ -144,7 +162,7 @@ Dvector Dvector::operator <<(double o)
   return v;
 }
 
-Dvector & Dvector::operator +=(double o)
+Dvector Dvector::operator +=(double o)
 {
   for (int i=0; i<taille-o; i++) {
     pCor[i] = pCor[i] + o;
@@ -152,7 +170,7 @@ Dvector & Dvector::operator +=(double o)
   return *this;
 }
 
-Dvector & Dvector::operator -=(double o)
+Dvector Dvector::operator -=(double o)
 {
   for (int i=0; i<taille-o; i++) {
     pCor[i] = pCor[i] - o;

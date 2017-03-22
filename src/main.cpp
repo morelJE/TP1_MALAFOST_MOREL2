@@ -15,6 +15,7 @@ int main()
     v.display( str );
     assert( str.str() == "2.5\n2.5\n2.5\n" );
     std::cout << "OK\n";
+    v.~Dvector();
 
 
 
@@ -24,8 +25,7 @@ int main()
     std::cout << "\n";
     Dvector y = Dvector (3, 1.);
     y.display(cout);
+    x.~Dvector();
+    y.~Dvector();
 
-
-
-};
 }

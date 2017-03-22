@@ -43,10 +43,38 @@ int main()
     assert(u(1)==4);
     u = u / 2;
     assert(u(2)==2);
-    std::cout << "[OK] Op + - * /\n\n";
+    std::cout << "[OK] Op + - * \n\n";
 
+    Dvector t(5,3);
+    Dvector x;
+    x = u + t;
+    assert(x(1)==5);
+    x = t - u;
+    assert(x(1)==1);
+    std::cout << "[OK] Op + - même taille \n\n";
+    t.~Dvector();
 
+    Dvector w(4,3);
+    x = u + w;
+    cout << x(4);
+    assert(x(4)==2);
+    x = w - u;
+    assert(x(4)==-2);
+    std::cout << "[OK] Op + - taille diff\n\n";
 
+    x = -u;
+    assert(x(1)==-2);
+    std::cout << "[OK] Op - unaire\n\n";
+    u.~Dvector();
+
+    x+= 3;
+    assert(x(1)==1);
+    x-= -2;
+    assert(x(1)==3);
+    std::cout << "[OK] Op += -=\n\n";
+
+    u.~Dvector();
+    x.~Dvector();
 /*
     Dvector x;
     x = Dvector (3, 1.);

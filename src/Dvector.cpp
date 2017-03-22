@@ -104,44 +104,53 @@ Dvector Dvector::operator /(double o)
 
 Dvector operator +(const Dvector n, const Dvector v)
 {
+  Dvector u(std::max(v.taille,n.taille));
   if (v.taille > n.taille) {
     for (int i = 0; i < n.taille; i++) {
-      v.pCor[i] = v.pCor[i] + n.pCor[i];
+      u.pCor[i] = v.pCor[i] + n.pCor[i];
     }
-    return v;
+    for (int j = n.taille; j < v.taille; j++) {
+      u.pCor[j] = v.pCor[j];
+    }
   } else {
     for (int i = 0; i < v.taille; i++) {
-      v.pCor[i] = v.pCor[i] + n.pCor[i];
+      u.pCor[i] = v.pCor[i] + n.pCor[i];
     }
-    return n;
+    for (int j = v.taille; j < n.taille; j++) {
+      u.pCor[j] = n.pCor[j];
+    }
   }
-
+  return u;
 }
 
 Dvector operator -(const Dvector n, const Dvector v)
 {
+  Dvector u(std::max(v.taille,n.taille));
   if (v.taille > n.taille) {
     for (int i = 0; i < n.taille; i++) {
-      v.pCor[i] = n.pCor[i] - v.pCor[i];
+      u.pCor[i] = n.pCor[i] - v.pCor[i];
     }
     for (int j = n.taille; j < v.taille; j++) {
-      v.pCor[j] = - v.pCor[j];
+      u.pCor[j] = - v.pCor[j];
     }
-    return v;
   } else {
     for (int i = 0; i < v.taille; i++) {
-      n.pCor[i] = n.pCor[i] - v.pCor[i];
+      u.pCor[i] = n.pCor[i] - v.pCor[i];
     }
-    return n;
+    for (int j = v.taille; j < n.taille; j++) {
+      u.pCor[j] = n.pCor[j];
+    }
   }
+  return u;
 }
 
 Dvector Dvector::operator -()
 {
+  Dvector u(taille);
   for (int i=0; i<taille; i++) {
-    pCor[i] = -pCor[i];
+    u.pCor[i] = -pCor[i];
   }
-  return *this;
+  return u;
 }
 
 Dvector Dvector::operator >>(double o)

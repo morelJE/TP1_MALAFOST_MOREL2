@@ -179,7 +179,7 @@ Dvector Dvector::operator <<(double o)
 
 Dvector Dvector::operator +=(double o)
 {
-  for (int i=0; i<taille-o; i++) {
+  for (int i=0; i<taille; i++) {
     pCor[i] = pCor[i] + o;
   }
   return *this;
@@ -187,10 +187,36 @@ Dvector Dvector::operator +=(double o)
 
 Dvector Dvector::operator -=(double o)
 {
-  for (int i=0; i<taille-o; i++) {
+  for (int i=0; i<taille; i++) {
     pCor[i] = pCor[i] - o;
   }
   return *this;
+}
+
+Dvector Dvector::operator *=(double o)
+{
+  for (int i=0; i<taille; i++) {
+    pCor[i] = pCor[i] * o;
+  }
+  return *this;
+}
+
+Dvector Dvector::operator /=(double o)
+{
+    try {
+        if (o == 0) {
+            throw string("Division par zéro ! le vecteur reste inchangé\n");
+        } else {
+            for (int i=0; i<taille; i++) {
+              pCor[i] = pCor[i] / o;
+            }
+            return *this;
+        }
+    }
+    catch (string const& chaine) {
+        cerr << chaine;
+    }
+    return *this;
 }
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;

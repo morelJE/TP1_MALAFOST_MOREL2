@@ -56,7 +56,6 @@ int main()
 
     Dvector w(4,3);
     x = u + w;
-    cout << x(4);
     assert(x(4)==2);
     x = w - u;
     assert(x(4)==-2);
@@ -67,11 +66,18 @@ int main()
     std::cout << "[OK] Op - unaire\n\n";
     u.~Dvector();
 
-    x+= 3;
+    x += 3;
     assert(x(1)==1);
-    x-= -2;
-    assert(x(1)==3);
-    std::cout << "[OK] Op += -=\n\n";
+    x -= -2;
+    assert(x(3)==3);
+    x *= 2;
+    assert(x(2)==6);
+    x /= 3;
+    assert(x(4)==2);
+    std::cout << "[OK] Op += -= *= /=\n\n";
+
+    x /= 0;
+
 
     u.~Dvector();
     x.~Dvector();

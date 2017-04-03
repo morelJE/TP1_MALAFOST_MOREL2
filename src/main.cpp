@@ -74,13 +74,27 @@ int main()
     assert(x(2)==6);
     x /= 3;
     assert(x(4)==2);
-    std::cout << "[OK] Op += -= *= /=\n\n";
+    std::cout << "[OK] Op += -= *= /=\n";
 
     x /= 0;
-
+    cout << endl;
 
     u.~Dvector();
     x.~Dvector();
+
+    Dvector m(4,2);
+    m << 1;
+    str.str(std::string());
+    m.display(str);
+    assert(str.str() == "2\n2\n2\n0\n");
+    m >> 2;
+    str.str(std::string());
+    m.display(str);
+    assert(str.str() == "0\n0\n2\n2\n");
+    std::cout << "[OK] << et >>\n\n";
+
+    m.~Dvector();
+
 /*
     Dvector x;
     x = Dvector (3, 1.);

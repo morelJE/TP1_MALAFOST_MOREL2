@@ -155,26 +155,24 @@ Dvector Dvector::operator -()
 
 Dvector Dvector::operator >>(double o)
 {
-  Dvector v(taille);
-  for (int i=0; i<(taille-o); i++) {
-    v.pCor[taille-i-1] = v.pCor[taille-i-1-(int)o];
+  for (int i = taille - 1; i >= o; i--) {
+    pCor[i] = pCor[i - (int) o];
   }
-  for (int i=0; i<o; i++) {
-    v.pCor[i] = 0;
+  for (int i = 0; i < o; i++) {
+    pCor[i] = 0;
   }
-  return v;
+  return *this;
 }
 
 Dvector Dvector::operator <<(double o)
 {
-  Dvector v(taille);
-  for (int i=0; i<(taille-o); i++) {
-    v.pCor[i] = v.pCor[i+(int)o];
+  for (int i = 0; i < taille - o; i++) {
+      pCor[i] = pCor[i + (int) o];
   }
-  for (int i=0; i<o; i++) {
-    v.pCor[taille-i-1] = 0;
+  for (int i = taille - o; i < taille; i++) {
+      pCor[i] = 0;
   }
-  return v;
+  return *this;
 }
 
 Dvector Dvector::operator +=(double o)

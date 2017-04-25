@@ -95,6 +95,15 @@ int main()
 
     m.~Dvector();
 
+
+
+    std::cout <<"QUESTION 1-1\n";
+    Dvector a;
+    a = Dvector(3,1.);
+    a.display(cout);
+    Dvector b = Dvector(3,1.);
+    b.display(cout);
+
 /*
     Dvector x;
     x = Dvector (3, 1.);

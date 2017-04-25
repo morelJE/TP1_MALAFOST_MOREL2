@@ -230,6 +230,11 @@ Dvector Dvector::operator /=(double o)
     return *this;
 }
 
+Dvector Dvector::operator =(Dvector& V) {
+  
+
+}
+
 
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;

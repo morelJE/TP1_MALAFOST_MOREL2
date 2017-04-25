@@ -8,9 +8,11 @@ CXX = g++
 CXXFLAGS = -Wall -g
 
 default:
+	mkdir -p bin
+	mkdir -p obj
 	$(CXX) $(CXXFLAGS) -c -o obj/main.o src/main.cpp
 	$(CXX) $(CXXFLAGS) -c -o obj/Dvector.o src/Dvector.cpp
-	
+
 	$(CXX) $(CXXFLAGS) -o $(PROG) $(OBJS)
 
 clean:

@@ -39,17 +39,19 @@ int main()
 
 
     u = u + 2;
-    assert(u(3)==3);
     u.display(cout);
+    assert(u(3)==3);
     u = u - 2;
     u.display(cout);
     assert(u(1)==1);
     u = u * 4;
+    u.display(cout);
     assert(u(1)==4);
     u = u / 2;
+    u.display(cout);
     assert(u(2)==2);
     std::cout << "[OK] Op + - * \n\n";
-/*
+
     Dvector t(5,3);
     Dvector x;
     x = u + t;
@@ -107,7 +109,7 @@ int main()
     a = Dvector(3,1.);
     a.display(cout);
     Dvector b = Dvector(3,1.);
-    b.display(cout);*/
+    b.display(cout);
 
 /*
     Dvector x;

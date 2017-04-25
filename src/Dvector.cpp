@@ -4,6 +4,7 @@
 #include <time.h>
 #include <fstream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 Dvector::Dvector() {
@@ -230,10 +231,21 @@ Dvector Dvector::operator /=(double o)
     return *this;
 }
 
-Dvector Dvector::operator =(Dvector& V) {
-  
-
+void Dvector::operator =(const Dvector& V) {
+      Dvector u(taille);
+      taille = V.taille;
+      pCor = new double(taille);
+      std::memcpy(pCor, V.pCor, taille*sizeof(double));
 }
+
+
+//    taille=V.taille;
+//    Dvector u(taille);
+//    pCor = new double[taille];
+//    for (int i=0; i<taille; i++) {
+//      u.pCor[i] = V.pCor[i];
+//    }
+//    return u;
 
 
 //Dvector::Dvector(std::string) {

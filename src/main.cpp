@@ -8,6 +8,24 @@
 int main()
 {
 
+
+    Dvector x = Dvector(3,1.);
+    Dvector y;
+    y = Dvector(3);
+
+    x.display(cout);
+    cout << "\n";
+    y.display(cout);
+
+    x.~Dvector();
+    y.display(cout);
+    //y.~Dvector();
+
+    //x.display(cout);
+    //y.display(cout);
+
+
+/*
     std::cout << "##################################\n";
     std::cout << "###############    ###############\n";
     std::cout << "###########    TEST    ###########\n";
@@ -15,7 +33,7 @@ int main()
     std::cout << "##################################\n\n";
 
     std::stringstream str;
-/*
+
     Dvector v(3,2.5);
     assert( v.size() == 3 );
     std::cout << "[OK] size / constructeur\n";
@@ -32,34 +50,31 @@ int main()
 
     v.~Dvector();
 */
-    Dvector u(5,1);
+    /*Dvector u(5,1.);
     assert(u(1)==1);
-    u.display(cout);
     std::cout << "[OK] Op ()\n\n";
 
 
     u = u + 2;
-    u.display(cout);
     assert(u(3)==3);
     u = u - 2;
-    u.display(cout);
     assert(u(1)==1);
     u = u * 4;
-    u.display(cout);
     assert(u(1)==4);
     u = u / 2;
-    u.display(cout);
     assert(u(2)==2);
-    std::cout << "[OK] Op + - * \n\n";
+    std::cout << "[OK] Op + - * \n\n";*/
 
-    Dvector t(5,3);
-    Dvector x;
+    //Dvector x;
+    //Dvector t(5,3);
+/*
     x = u + t;
+
     assert(x(1)==5);
     x = t - u;
     assert(x(1)==1);
     std::cout << "[OK] Op + - même taille \n\n";
-    t.~Dvector();
+    //t.~Dvector();
 
     Dvector w(4,3);
     x = u + w;
@@ -71,7 +86,6 @@ int main()
     x = -u;
     assert(x(1)==-2);
     std::cout << "[OK] Op - unaire\n\n";
-    u.~Dvector();
 
     x += 3;
     assert(x(1)==1);
@@ -81,9 +95,9 @@ int main()
     assert(x(2)==6);
     x /= 3;
     assert(x(4)==2);
-    std::cout << "[OK] Op += -= *= /=\n";
+    std::cout << "[OK] Op += -= *= /=\n";*/
 
-    x /= 0;
+    /*x /= 0;
     cout << endl;
 
     u.~Dvector();
@@ -100,16 +114,16 @@ int main()
     assert(str.str() == "0\n0\n2\n2\n");
     std::cout << "[OK] << et >>\n\n";
 
-    m.~Dvector();
+    m.~Dvector();*/
 
 
-
+/*
     std::cout <<"QUESTION 1-1\n";
     Dvector a;
     a = Dvector(3,1.);
     a.display(cout);
     Dvector b = Dvector(3,1.);
-    b.display(cout);
+    b.display(cout);*/
 
 /*
     Dvector x;

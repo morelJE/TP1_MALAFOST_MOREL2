@@ -10,7 +10,6 @@ using namespace std;
 Dvector::Dvector() {
     taille = 0;
     pCor = new double[taille];
-    pCor[0]=0.0;
 }
 
 int Dvector::size() {
@@ -43,6 +42,7 @@ Dvector::Dvector(int s, double p) {
 }
 
 Dvector::~Dvector() {
+  cout << "suppression\n";
   delete [] pCor;
 }
 

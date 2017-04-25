@@ -19,11 +19,13 @@ public:
 
     Dvector(int,double p = 0);
 
+    Dvector(std::string&);
+
     void display(std::ostream& str);
 
     void fillRandomly();
 
-    ~Dvector() {}
+    ~Dvector();
 
     double operator()(int i);
 

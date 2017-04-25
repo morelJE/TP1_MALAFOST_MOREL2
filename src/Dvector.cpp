@@ -24,12 +24,25 @@ Dvector::Dvector(const Dvector & V) {
     }
 }
 
+Dvector::Dvector(std::string& my_str) {
+    taille = my_str.size();
+    pCor = new double[taille];
+    for (int i=0; i<taille; i++) {
+      pCor[i] = my_str[i];
+    }
+}
+
+
 Dvector::Dvector(int s, double p) {
     taille = s;
     pCor = new double [taille];
     for (int i=0; i<taille; i++) {
       pCor[i] = p;
     }
+}
+
+Dvector::~Dvector() {
+  delete [] pCor;
 }
 
 
@@ -216,6 +229,8 @@ Dvector Dvector::operator /=(double o)
     }
     return *this;
 }
+
+
 //Dvector::Dvector(std::string) {
 //  int compteur = 0;
 //  ifstream fichier(std::string);

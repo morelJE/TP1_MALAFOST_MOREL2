@@ -232,8 +232,7 @@ Dvector Dvector::operator /=(double o)
 }
 
 void Dvector::operator =(const Dvector& V) {
-      Dvector u(taille);
-      taille = V.taille;
+      taille = V.taille;s
       pCor = new double(taille);
       std::memcpy(pCor, V.pCor, taille*sizeof(double));
 }

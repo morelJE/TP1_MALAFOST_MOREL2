@@ -42,6 +42,7 @@ Dvector::Dvector(int s, double p) {
 }
 
 Dvector::~Dvector() {
+  cout << "SUPRESS\n";
   delete [] this->pCor;
 }
 
@@ -230,10 +231,15 @@ Dvector Dvector::operator /=(double o)
     return *this;
 }
 
-void Dvector::operator =(const Dvector& V) {
+Dvector Dvector::operator =(const Dvector& V) {
       taille = V.taille;
       pCor = new double(taille);
-      std::memcpy(pCor, V.pCor, taille*sizeof(double));
+      memcpy(pCor, V.pCor, taille * sizeof(double));
+      return *this;
+
+      /*taille = V.taille;
+      pCor = new double(taille);
+      std::memcpy(pCor, V.pCor, taille*sizeof(double));*/
 }
 
 

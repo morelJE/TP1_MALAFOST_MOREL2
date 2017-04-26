@@ -55,5 +55,5 @@ public:
 
     Dvector operator /=(double o);
 
-    void operator =(const Dvector &V);
+    Dvector operator =(const Dvector &V);
 };

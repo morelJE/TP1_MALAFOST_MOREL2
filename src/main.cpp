@@ -32,16 +32,21 @@ int main()
     std::cout << "\n";
 
     Dvector u(5,1.);
+    u.display(cout);
     assert(u(1)==1);
     std::cout << "[OK] Op ()\n\n";
 
 
+    Dvector x;
+    v = v + 2;
+    x.display(cout);
+    //u = x;
+
+    //u = u + 2;
+    //u.display(cout);
+    //assert(u(3)==3);
 
 /*
-    u = u + 2;
-    assert(u(3)==3);
-
-
     u = u - 2;
     assert(u(1)==1);
     u = u * 4;

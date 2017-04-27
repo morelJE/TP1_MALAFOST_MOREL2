@@ -236,20 +236,20 @@ Dvector Dvector::operator /=(double o)
 }
 
 Dvector Dvector::operator =(const Dvector& V) {
-  if (taille == V.taille) {
-    for (int i=0; i<taille; i++) {
-      pCor[i] = V.pCor[i];
+    int i = 0;
+    while (i<taille) {
+        pCor[i] = V.pCor[i];
+        i++;
     }
     return *this;
-  }
-  else {
-    std::cout << "Error : Les vecteurs ne font pas la même taille";
-    return *this;
-  }
+}
+
+Dvector Dvector::resize(const Dvector &V) {
+    
 }
 
 /*
-bool operator ==(const Dvector& n, const Dvector& v) {
+bool Devector::operator ==(const Dvector& n, const Dvector& v) {
     if (n.taille != v.taille) {
         return false;
     }

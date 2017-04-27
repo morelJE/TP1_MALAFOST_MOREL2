@@ -58,4 +58,6 @@ public:
     Dvector operator =(const Dvector &V);
 
     //bool operator ==(const Dvector& n, const Dvector& v);
+
+    Dvector resize(const Dvector &V);
 };

@@ -13,7 +13,7 @@ int main()
     std::cout << "###########    TEST    ###########\n";
     std::cout << "###############    ###############\n";
     std::cout << "##################################\n\n";
-/*
+
     std::stringstream str;
     Dvector v(3,2.5);
     assert( v.size() == 3 );
@@ -34,27 +34,12 @@ int main()
     u.display(cout);
     assert(u(1)==1);
     std::cout << "[OK] Op ()\n\n";
-*/
 
-    Dvector x(4, 1.);
-    Dvector t(3);
-    t.display(cout);
-    t = t + 1;
-    t.display(cout);
-
-    //x.display(cout);
-    //u = x;
-
-/*
     u = u + 2;
-    assert(u(3)==3);*/
-
-/*
+    assert(u(3)==3);
     u = u - 2;
     assert(u(1)==1);
     u = u * 4;
-
-
     assert(u(1)==4);
     u = u / 2;
     assert(u(2)==2);
@@ -106,13 +91,5 @@ int main()
     assert(str.str() == "0\n0\n2\n2\n");
     std::cout << "[OK] << et >>\n\n";
 
-
-    std::cout <<"QUESTION 1-1\n";
-    Dvector a;
-    a = Dvector(3,1.);
-    a.display(cout);
-    Dvector b = Dvector(3,1.);
-    b.display(cout);
-*/
 
 }

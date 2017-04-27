@@ -8,6 +8,7 @@
 using namespace std;
 
 Dvector::Dvector() {
+    cout << "CREATE EMPTY\n";
     taille = 0;
     pCor = new double[taille];
 }
@@ -17,14 +18,16 @@ int Dvector::size() {
 }
 
 Dvector::Dvector(const Dvector & V) {
-    taille=V.taille;
-    pCor = new double[taille];
-    for (int i=0; i<taille; i++) {
-      pCor[i] = V.pCor[i];
+  cout << "CREATE\n";
+    this->taille=V.taille;
+    this->pCor = new double[this->taille];
+    for (int i=0; i<this->taille; i++) {
+      this->pCor[i] = V.pCor[i];
     }
 }
 
 Dvector::Dvector(std::string& my_str) {
+    cout << "CREATE\n";
     taille = my_str.size();
     pCor = new double[taille];
     for (int i=0; i<taille; i++) {
@@ -34,14 +37,16 @@ Dvector::Dvector(std::string& my_str) {
 
 
 Dvector::Dvector(int s, double p) {
-    taille = s;
-    pCor = new double [taille];
-    for (int i=0; i<taille; i++) {
+    cout << "CREATE\n";
+    this->taille = s;
+    pCor = new double [this->taille];
+    for (int i=0; i<this->taille; i++) {
       pCor[i] = p;
     }
 }
 
 Dvector::~Dvector() {
+  cout << "SUPRESS\n";
   delete [] this->pCor;
 }
 
@@ -115,7 +120,7 @@ Dvector Dvector::operator /(double o)
   return v;
 }
 
-Dvector operator +(const Dvector n, const Dvector v)
+Dvector operator +(const Dvector& n, const Dvector& v)
 {
   Dvector u(std::max(v.taille,n.taille));
   if (v.taille > n.taille) {
@@ -136,7 +141,7 @@ Dvector operator +(const Dvector n, const Dvector v)
   return u;
 }
 
-Dvector operator -(const Dvector n, const Dvector v)
+Dvector operator -(const Dvector& n, const Dvector& v)
 {
   Dvector u(std::max(v.taille,n.taille));
   if (v.taille > n.taille) {
@@ -230,12 +235,27 @@ Dvector Dvector::operator /=(double o)
     return *this;
 }
 
-void Dvector::operator =(const Dvector& V) {
-      this->taille = V.taille;
-      this->pCor = new double(taille);
-      std::memcpy(pCor, V.pCor, taille*sizeof(double));
+Dvector Dvector::operator =(const Dvector& V) {
+      if (this != &V) {
+          this->taille = V.taille;
+          this->pCor = V.pCor;
+          memcpy(this->pCor, V.pCor, this->taille * sizeof(double));
+      }
+      return *this;
 }
 
+/*
+bool operator ==(const Dvector& n, const Dvector& v) {
+    if (n.taille != v.taille) {
+        return false;
+    }
+    for (int i = 0; i < n.taille; i++) {
+        if (n.pCor[i] != v.pCor[i]) {
+            return false;
+        }
+    }
+    return true;
+}*/
 
 //    taille=V.taille;
 //    Dvector u(taille);

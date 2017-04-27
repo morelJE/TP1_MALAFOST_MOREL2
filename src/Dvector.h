@@ -37,9 +37,9 @@ public:
 
     Dvector operator /(double o);
 
-    friend Dvector operator +(const Dvector n, const Dvector v);
+    friend Dvector operator +(const Dvector& n, const Dvector& v);
 
-    friend Dvector operator -(const Dvector n, const Dvector v);
+    friend Dvector operator -(const Dvector& n, const Dvector& v);
 
     Dvector operator -();
 
@@ -55,5 +55,7 @@ public:
 
     Dvector operator /=(double o);
 
-    void operator =(const Dvector &V);
+    Dvector operator =(const Dvector &V);
+
+    //bool operator ==(const Dvector& n, const Dvector& v);
 };

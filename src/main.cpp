@@ -36,12 +36,13 @@ int main()
 
     u = u + 2;
     assert(u(3)==3);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 54a9ff26c4d62767901d56a17e2f8001b00ae2af
     u = u - 2;
     assert(u(1)==1);
     u = u * 4;
-
-
     assert(u(1)==4);
     u = u / 2;
     assert(u(2)==2);
@@ -102,6 +103,5 @@ int main()
     a.display(cout);
     Dvector b = Dvector(3,1.);
     b.display(cout);
-
 
 }

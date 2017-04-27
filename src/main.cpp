@@ -13,9 +13,8 @@ int main()
     std::cout << "###########    TEST    ###########\n";
     std::cout << "###############    ###############\n";
     std::cout << "##################################\n\n";
-
+/*
     std::stringstream str;
-
     Dvector v(3,2.5);
     assert( v.size() == 3 );
     std::cout << "[OK] size / constructeur\n";
@@ -35,11 +34,13 @@ int main()
     u.display(cout);
     assert(u(1)==1);
     std::cout << "[OK] Op ()\n\n";
+*/
 
+    Dvector x(3, 1.);
+    Dvector t(3);
+    t = x + 2;
 
-    Dvector x;
-    v = v + 2;
-    x.display(cout);
+    //x.display(cout);
     //u = x;
 
     //u = u + 2;

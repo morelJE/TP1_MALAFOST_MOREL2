@@ -37,10 +37,10 @@ int main()
 
 
 
-/*
+
     u = u + 2;
     assert(u(3)==3);
-
+/*
 
     u = u - 2;
     assert(u(1)==1);

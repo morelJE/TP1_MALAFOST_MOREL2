@@ -236,12 +236,16 @@ Dvector Dvector::operator /=(double o)
 }
 
 Dvector Dvector::operator =(const Dvector& V) {
-      if (this != &V) {
-          this->taille = V.taille;
-          this->pCor = V.pCor;
-          memcpy(this->pCor, V.pCor, this->taille * sizeof(double));
-      }
-      return *this;
+  if (taille == V.taille) {
+    for (int i=0; i<taille; i++) {
+      pCor[i] = V.pCor[i];
+    }
+    return *this;
+  }
+  else {
+    std::cout << "Error : Les vecteurs ne font pas la même taille";
+    return *this;
+  }
 }
 
 /*

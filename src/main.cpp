@@ -36,23 +36,18 @@ int main()
     std::cout << "[OK] Op ()\n\n";
 */
 
-    Dvector x(3, 1.);
+    Dvector x(4, 1.);
     Dvector t(3);
-    t = x + 2;
+    t.display(cout);
+    t = t + 1;
+    t.display(cout);
 
     //x.display(cout);
     //u = x;
 
-<<<<<<< HEAD
-
-    u = u + 2;
-    assert(u(3)==3);
 /*
-=======
-    //u = u + 2;
-    //u.display(cout);
-    //assert(u(3)==3);
->>>>>>> 1d7579d23004debc47366ca2b5d58c22c8022b95
+    u = u + 2;
+    assert(u(3)==3);*/
 
 /*
     u = u - 2;

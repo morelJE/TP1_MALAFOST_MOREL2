@@ -59,5 +59,5 @@ public:
 
     //bool operator ==(const Dvector& n, const Dvector& v);
 
-    Dvector resize(const Dvector &V);
+    Dvector resize(int taille, double valeur = 0.);
 };

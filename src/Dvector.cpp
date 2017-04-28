@@ -244,9 +244,8 @@ Dvector Dvector::operator =(const Dvector& V) {
     return *this;
 }
 
-Dvector Dvector::resize(const Dvector &V) {
-    
-}
+//Dvector Dvector::resize(const Dvector &V) {
+//}
 
 /*
 bool Devector::operator ==(const Dvector& n, const Dvector& v) {

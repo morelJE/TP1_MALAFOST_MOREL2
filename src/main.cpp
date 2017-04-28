@@ -36,10 +36,6 @@ int main()
 
     u = u + 2;
     assert(u(3)==3);
-<<<<<<< HEAD
-
-=======
->>>>>>> 54a9ff26c4d62767901d56a17e2f8001b00ae2af
     u = u - 2;
     assert(u(1)==1);
     u = u * 4;
@@ -95,7 +91,6 @@ int main()
     m.display(str);
     assert(str.str() == "0\n0\n2\n2\n");
     std::cout << "[OK] << et >>\n\n";
-
 
     std::cout <<"QUESTION 1-1\n";
     Dvector a;

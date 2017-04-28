@@ -3,7 +3,7 @@
 #include <sstream>
 #include <assert.h>
 #include "Dvector.h"
-//using namespace std;
+using namespace std;
 
 int main()
 {
@@ -111,7 +111,7 @@ int main()
     assert(z==y);
     std::cout << "[OK] == \n\n";
 
-    
+
 
     /*std::cout <<"QUESTION 1-1\n";
     Dvector a;

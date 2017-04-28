@@ -17,7 +17,7 @@ public:
 
     Dvector(const Dvector & V);
 
-    Dvector(int,double p = 0);
+    Dvector(int s,double p = 0);
 
     Dvector(std::string&);
 

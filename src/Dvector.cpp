@@ -244,8 +244,27 @@ Dvector Dvector::operator =(const Dvector& V) {
     return *this;
 }
 
-//Dvector Dvector::resize(const Dvector &V) {
-//}
+Dvector Dvector::resize(int taille, double valeur) {
+
+
+    double* nouv = new double[taille];
+    for (int i = 0; i < this->taille; i++) {
+        nouv[i] = this->pCor[i];
+    }
+
+    delete [] this->pCor;
+    this->pCor = nouv;
+
+    if (taille > this->taille) {
+        for (int i = this->taille; i < taille; i++) {
+            this->pCor[i] = valeur;
+        }
+    }
+    this->taille = taille;
+    cout << this << "\n";
+    this->display(cout);
+    return *this;
+}
 
 /*
 bool Devector::operator ==(const Dvector& n, const Dvector& v) {

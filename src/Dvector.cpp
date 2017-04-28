@@ -259,8 +259,6 @@ Dvector Dvector::resize(int taille, double valeur) {
         }
     }
     this->taille = taille;
-    cout << this << "\n";
-    this->display(cout);
     return *this;
 }
 

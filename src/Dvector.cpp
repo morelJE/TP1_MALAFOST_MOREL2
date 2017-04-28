@@ -245,8 +245,6 @@ Dvector Dvector::operator =(const Dvector& V) {
 }
 
 Dvector Dvector::resize(int taille, double valeur) {
-
-
     double* nouv = new double[taille];
     for (int i = 0; i < this->taille; i++) {
         nouv[i] = this->pCor[i];

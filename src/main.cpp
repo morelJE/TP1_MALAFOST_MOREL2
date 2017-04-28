@@ -8,10 +8,9 @@
 int main()
 {
 
+
     std::cout << "##################################\n";
-    std::cout << "###############    ###############\n";
     std::cout << "###########    TEST    ###########\n";
-    std::cout << "###############    ###############\n";
     std::cout << "##################################\n\n";
 
     std::stringstream str;
@@ -92,11 +91,33 @@ int main()
     assert(str.str() == "0\n0\n2\n2\n");
     std::cout << "[OK] << et >>\n\n";
 
-    std::cout <<"QUESTION 1-1\n";
+
+    Dvector z(3,2.);
+    assert(z(2)==2.0);
+    z.resize(2,1.);
+    assert(z(1)==2.0);
+    z.resize(1);
+    assert(z(0)==2.0);
+    z.resize(2,3.);
+    assert(z(1)==3.0);
+    z.resize(3);
+    assert(z(2)==0.0);
+    std::cout << "[OK] resize \n\n";
+
+    std::string chain = "230";
+    Dvector y(chain);
+    assert((z==y) == false);
+    y -= 48;
+    assert(z==y);
+    std::cout << "[OK] == \n\n";
+
+    
+
+    /*std::cout <<"QUESTION 1-1\n";
     Dvector a;
     a = Dvector(3,1.);
     a.display(cout);
     Dvector b = Dvector(3,1.);
-    b.display(cout);
+    b.display(cout);*/
 
 }

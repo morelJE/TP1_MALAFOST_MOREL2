@@ -8,7 +8,6 @@
 using namespace std;
 
 Dvector::Dvector() {
-    cout << "CREATE EMPTY\n";
     taille = 0;
     pCor = new double[taille];
 }
@@ -18,7 +17,6 @@ int Dvector::size() {
 }
 
 Dvector::Dvector(const Dvector & V) {
-  cout << "CREATE\n";
     this->taille=V.taille;
     this->pCor = new double[this->taille];
     for (int i=0; i<this->taille; i++) {
@@ -27,7 +25,6 @@ Dvector::Dvector(const Dvector & V) {
 }
 
 Dvector::Dvector(std::string& my_str) {
-    cout << "CREATE\n";
     taille = my_str.size();
     pCor = new double[taille];
     for (int i=0; i<taille; i++) {
@@ -37,7 +34,6 @@ Dvector::Dvector(std::string& my_str) {
 
 
 Dvector::Dvector(int s, double p) {
-    cout << "CREATE\n";
     this->taille = s;
     pCor = new double [this->taille];
     for (int i=0; i<this->taille; i++) {
@@ -46,7 +42,6 @@ Dvector::Dvector(int s, double p) {
 }
 
 Dvector::~Dvector() {
-  cout << "SUPRESS\n";
   delete [] this->pCor;
 }
 
@@ -262,8 +257,8 @@ Dvector Dvector::resize(int taille, double valeur) {
     return *this;
 }
 
-/*
-bool Devector::operator ==(const Dvector& n, const Dvector& v) {
+
+bool operator ==(const Dvector& n, const Dvector& v) {
     if (n.taille != v.taille) {
         return false;
     }
@@ -273,7 +268,7 @@ bool Devector::operator ==(const Dvector& n, const Dvector& v) {
         }
     }
     return true;
-}*/
+}
 
 //    taille=V.taille;
 //    Dvector u(taille);

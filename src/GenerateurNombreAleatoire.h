@@ -13,9 +13,9 @@ public:
 
   GenerateurNombreAleatoire(const GenerateurNombreAleatoire &Gen);
 
-  virtual GenerateurNombreAleatoire* Clone();
+  GenerateurNombreAleatoire* Clone();
 
-  virtual ~GenerateurNombreAleatoire();
+  ~GenerateurNombreAleatoire();
 
   GenerateurNombreAleatoire operator =(const GenerateurNombreAleatoire &Gen);
 

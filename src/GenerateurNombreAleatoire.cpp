@@ -4,8 +4,8 @@ GenerateurNombreAleatoire::GenerateurNombreAleatoire() {
 
 }
 
-GenerateurNombreAleatoire::GenerateurNombreAleatoire(int) {
-
+GenerateurNombreAleatoire::GenerateurNombreAleatoire(int dim) {
+  this->dim = dim;
 }
 
 GenerateurNombreAleatoire::GenerateurNombreAleatoire(const GenerateurNombreAleatoire &Gen) {
@@ -25,10 +25,15 @@ void GenerateurNombreAleatoire::set_seed() {
 
 }
 
-void GenerateurNombreAleatoire::get_seed() {
-
+int GenerateurNombreAleatoire::get_seed() {
+  return 0;
 }
 
 void GenerateurNombreAleatoire::reset_seed() {
 
+}
+
+Dvector GenerateurNombreAleatoire::genUniforme() {
+  Dvector v(this->dim);
+  return v;
 }

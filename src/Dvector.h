@@ -27,7 +27,7 @@ public:
 
     ~Dvector();
 
-    double operator()(int i);
+    double& operator ()(const int& i) const;
 
     Dvector operator +(double o);
 

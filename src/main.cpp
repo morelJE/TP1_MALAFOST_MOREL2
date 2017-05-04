@@ -30,17 +30,20 @@ int main()
     std::cout << "\n";
 
     Dvector u(5,1.);
-    assert(u(1)==1);
+    assert(u(2)==1);
+    u(1) = 2;
+    assert(u(1)==2);
+    u(1) = 1.0;
     std::cout << "[OK] Op ()\n\n";
 
     u = u + 2;
-    assert(u(3)==3);
+    assert(u(4)==3);
     u = u - 2;
-    assert(u(1)==1);
+    assert(u(2)==1);
     u = u * 4;
-    assert(u(1)==4);
+    assert(u(2)==4);
     u = u / 2;
-    assert(u(2)==2);
+    assert(u(3)==2);
     std::cout << "[OK] Op + - * \n\n";
 
 
@@ -50,31 +53,31 @@ int main()
 
     x = u + t;
 
-    assert(x(1)==5);
+    assert(x(2)==5);
     x = t - u;
-    assert(x(1)==1);
+    assert(x(2)==1);
     std::cout << "[OK] Op + - même taille \n\n";
 
 
     Dvector w(4,3);
     x = u + w;
-    assert(x(4)==2);
+    assert(x(5)==2);
     x = w - u;
-    assert(x(4)==-2);
+    assert(x(5)==-2);
     std::cout << "[OK] Op + - taille diff\n\n";
 
     x = -u;
-    assert(x(1)==-2);
+    assert(x(2)==-2);
     std::cout << "[OK] Op - unaire\n\n";
 
     x += 3;
-    assert(x(1)==1);
+    assert(x(2)==1);
     x -= -2;
-    assert(x(3)==3);
+    assert(x(4)==3);
     x *= 2;
-    assert(x(2)==6);
+    assert(x(3)==6);
     x /= 3;
-    assert(x(4)==2);
+    assert(x(5)==2);
     std::cout << "[OK] Op += -= *= /=\n";
 
     x /= 0;
@@ -93,15 +96,15 @@ int main()
 
 
     Dvector z(3,2.);
-    assert(z(2)==2.0);
+    assert(z(3)==2.0);
     z.resize(2,1.);
-    assert(z(1)==2.0);
+    assert(z(2)==2.0);
     z.resize(1);
-    assert(z(0)==2.0);
+    assert(z(1)==2.0);
     z.resize(2,3.);
-    assert(z(1)==3.0);
+    assert(z(2)==3.0);
     z.resize(3);
-    assert(z(2)==0.0);
+    assert(z(3)==0.0);
     std::cout << "[OK] resize \n\n";
 
     std::string chain = "230";
@@ -110,6 +113,8 @@ int main()
     y -= 48;
     assert(z==y);
     std::cout << "[OK] == \n\n";
+
+
 
 
 

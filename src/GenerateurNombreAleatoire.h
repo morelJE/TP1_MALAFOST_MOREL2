@@ -1,3 +1,4 @@
+#include "Dvector.h"
 class GenerateurNombreAleatoire
 {
 
@@ -9,7 +10,7 @@ public:
 
   GenerateurNombreAleatoire();
 
-  GenerateurNombreAleatoire(int);
+  GenerateurNombreAleatoire(int dim);
 
   GenerateurNombreAleatoire(const GenerateurNombreAleatoire &Gen);
 
@@ -25,7 +26,10 @@ public:
 
   void set_seed();
 
-  void get_seed();
+  int get_seed();
 
   void reset_seed();
+
+  Dvector genUniforme();
+
 };

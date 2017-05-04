@@ -3,11 +3,22 @@
 #include <string>
 #include <sstream>
 #include <assert.h>
-#include "GenerateurNombreAleatoire.h"
+#include "GenerateurParkMiller.h"
 using namespace std;
 int main()
 {
 
-  cout << "coucou\n";
+  GenerateurParkMiller GenP(8);
+  Dvector x = GenP.genRand();
+  x.display(cout);
+
+/*
+  ParkMiller p;
+  double d;
+  for (int i = 0; i < 3; i++) {
+    d = p.genRandom();
+    cout << d << "\n";
+  }
+  cout << "\n";*/
 
 }

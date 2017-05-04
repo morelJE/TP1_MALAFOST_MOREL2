@@ -1,25 +1,25 @@
+
 class ParkMiller
 {
 
-private:
-    seed;
+protected:
+
+  int seed;
 
 public:
-    ParkMiller() {
 
-    }
+  ParkMiller();
 
-    ParkMiller(const ParkMiller&) {
+  ParkMiller(const ParkMiller& P);
 
-    }
+  ~ParkMiller();
 
-    ~ParkMiller() {
+  ParkMiller operator =(const ParkMiller& P);
 
-    }
+  int getSeed() {return this->seed;}
 
-    ParkMiller operator =(const ParkMiller&) {
+  void setSeed(int seed) {this->seed = seed;}
 
-    }
+  double genRandom();
 
-    
 };

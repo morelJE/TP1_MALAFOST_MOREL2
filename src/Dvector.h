@@ -1,3 +1,11 @@
+#ifndef DVECTOR_H_
+#define DVECTOR_H_
+//!
+//! \file Dvector.h
+//! \brief Classe implémentant des tableaux dynamiques et les opérations allant avec
+//! \author morel2-malafost
+//!
+
 #include <iostream>
 using namespace std;
 
@@ -61,3 +69,5 @@ public:
 
     Dvector resize(int taille, double valeur = 0.);
 };
+
+#endif

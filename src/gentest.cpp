@@ -12,13 +12,18 @@ int main()
   Dvector x = GenP.genRand();
   x.display(cout);
 
-/*
-  ParkMiller p;
+
   double d;
-  for (int i = 0; i < 3; i++) {
-    d = p.genRandom();
-    cout << d << "\n";
+  for (int i = 0; i < 8; i++) {
+    d = GenP.genRand();
+    cout << d << "   ";
   }
-  cout << "\n";*/
+  cout << "\n";
+  GenP.set_seed(int(d));
+  for (int i = 0; i < 8; i++) {
+    d = GenP.genRand();
+    cout << d << "   ";
+  }
+  cout << "\n";
 
 }

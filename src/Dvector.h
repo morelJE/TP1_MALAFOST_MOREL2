@@ -1,4 +1,4 @@
-#ifndef DVECTOR_H_
+M#ifndef DVECTOR_H_
 #define DVECTOR_H_
 //!
 //! \file Dvector.h
@@ -79,28 +79,67 @@ public:
     //! \return le nouveau Dvector résultant de la division
     Dvector operator /(double o);
 
+    //! \brief Surcharge de l'opérateur +, pour additionner 2 tableaux membre par membre.
+    //! \param n : Le membre gauche de l'addtion
+    //! \param v : Le membre droit de l'addtion
+    //! \return le nouveau Dvector résultant de l'addition
     friend Dvector operator +(const Dvector& n, const Dvector& v);
 
+    //! \brief Surcharge de l'opérateur +, pour soustraire 2 tableaux membre par membre.
+    //! \param n : Le membre gauche de la soustraction
+    //! \param v : Le membre droit de la soustraction
+    //! \return le nouveau Dvector résultant de la soustraction
     friend Dvector operator -(const Dvector& n, const Dvector& v);
 
+    //! \brief Surcharge de l'opérateur - unaire
+    //! \return l'inverse membre par membre du tableau
     Dvector operator -();
 
+    //! \brief Surcharge de l'opérateur >>, décalant le tableau vers la droite
+    //! \param o : taille du décalage
+    //! \return le tableau décalé
     Dvector operator >>(double o);
 
+    //! \brief Surcharge de l'opérateur <<, décalant le tableau vers la gauche
+    //! \param o : taille du décalage
+    //! \return le tableau décalé
     Dvector operator <<(double o);
 
+    //! \brief Surcharge de l'opérateur +=
+    //! \param o : L'entier a additionner à chaque membre du tableau
+    //! \return le nouveau Dvector résultant de l'addition
     Dvector operator +=(double o);
 
+    //! \brief Surcharge de l'opérateur -=
+    //! \param o : L'entier a soustraire à chaque membre du tableau
+    //! \return le nouveau Dvector résultant de la soustraction
     Dvector operator -=(double o);
 
+    //! \brief Surcharge de l'opérateur *=
+    //! \param o : L'entier a multiplier à chaque membre du tableau
+    //! \return le nouveau Dvector résultant de la multiplication
     Dvector operator *=(double o);
 
+    //! \brief Surcharge de l'opérateur /=
+    //! \param o : L'entier a diviser à chaque membre du tableau
+    //! \return le nouveau Dvector résultant de la division
     Dvector operator /=(double o);
 
+    //! \brief Surcharge de l'opérateur d'affectation
+    //! \param V : le Dvector que l'on affecte
+    //! \return le nouveau Dvector résultant de l'affectation
     Dvector operator =(const Dvector &V);
 
+    //! \brief Surcharge de l'opérateur d'égalité ==
+    //! \param v : le membre gauche
+    //! \param n : le membre droit
+    //! \return le booleén qui dit si les 2 tableaux sont égaux ou non
     friend bool operator ==(const Dvector& n, const Dvector& v);
 
+    //! \brief fonction changeant la taille d'un Dvector.
+    //! \param taille : la nouvelle taille du tableau
+    //! \param valeur (optionnel) : si on agrandit le tableau, la valeur à la quelle seront initialiser les cases
+    //! \return le Dvector de la bonne taille
     Dvector resize(int taille, double valeur = 0.);
 };
 

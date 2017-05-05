@@ -60,47 +60,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -143,25 +102,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/toto.dir/rule:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/toto.dir/rule
-.PHONY : src/CMakeFiles/toto.dir/rule
+src/CMakeFiles/libprng.dir/rule:
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/libprng.dir/rule
+.PHONY : src/CMakeFiles/libprng.dir/rule
 
 # Convenience name for target.
-toto: src/CMakeFiles/toto.dir/rule
-.PHONY : toto
+libprng: src/CMakeFiles/libprng.dir/rule
+.PHONY : libprng
 
 # fast build rule for target.
-toto/fast:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/build
-.PHONY : toto/fast
+libprng/fast:
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/build
+.PHONY : libprng/fast
 
 Dvector.o: Dvector.cpp.o
 .PHONY : Dvector.o
 
 # target to build an object file
 Dvector.cpp.o:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/Dvector.cpp.o
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/Dvector.cpp.o
 .PHONY : Dvector.cpp.o
 
 Dvector.i: Dvector.cpp.i
@@ -169,7 +128,7 @@ Dvector.i: Dvector.cpp.i
 
 # target to preprocess a source file
 Dvector.cpp.i:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/Dvector.cpp.i
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/Dvector.cpp.i
 .PHONY : Dvector.cpp.i
 
 Dvector.s: Dvector.cpp.s
@@ -177,32 +136,32 @@ Dvector.s: Dvector.cpp.s
 
 # target to generate assembly for a file
 Dvector.cpp.s:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/Dvector.cpp.s
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/Dvector.cpp.s
 .PHONY : Dvector.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+GenerateurNombreAleatoire.o: GenerateurNombreAleatoire.cpp.o
+.PHONY : GenerateurNombreAleatoire.o
 
 # target to build an object file
-main.cpp.o:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/main.cpp.o
-.PHONY : main.cpp.o
+GenerateurNombreAleatoire.cpp.o:
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/GenerateurNombreAleatoire.cpp.o
+.PHONY : GenerateurNombreAleatoire.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+GenerateurNombreAleatoire.i: GenerateurNombreAleatoire.cpp.i
+.PHONY : GenerateurNombreAleatoire.i
 
 # target to preprocess a source file
-main.cpp.i:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/main.cpp.i
-.PHONY : main.cpp.i
+GenerateurNombreAleatoire.cpp.i:
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/GenerateurNombreAleatoire.cpp.i
+.PHONY : GenerateurNombreAleatoire.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+GenerateurNombreAleatoire.s: GenerateurNombreAleatoire.cpp.s
+.PHONY : GenerateurNombreAleatoire.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/toto.dir/build.make src/CMakeFiles/toto.dir/main.cpp.s
-.PHONY : main.cpp.s
+GenerateurNombreAleatoire.cpp.s:
+	cd /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build && $(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/GenerateurNombreAleatoire.cpp.s
+.PHONY : GenerateurNombreAleatoire.cpp.s
 
 # Help Target
 help:
@@ -211,18 +170,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
+	@echo "... libprng"
 	@echo "... rebuild_cache"
-	@echo "... toto"
 	@echo "... Dvector.o"
 	@echo "... Dvector.i"
 	@echo "... Dvector.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... GenerateurNombreAleatoire.o"
+	@echo "... GenerateurNombreAleatoire.i"
+	@echo "... GenerateurNombreAleatoire.s"
 .PHONY : help
 
 

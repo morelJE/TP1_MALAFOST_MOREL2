@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/Dvector.cpp
+Dvector.h
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/Dvector.h
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+fstream
+-
+string
+-
+cstring
+-
+
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/Dvector.h
+iostream
+-
+
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/GenerateurNombreAleatoire.cpp
+GenerateurNombreAleatoire.h
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/GenerateurNombreAleatoire.h
+
+/user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/src/GenerateurNombreAleatoire.h
+

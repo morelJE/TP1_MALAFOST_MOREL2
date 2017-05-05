@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblibprng.a  CMakeFiles/libprng.dir/Dvector.cpp.o CMakeFiles/libprng.dir/GenerateurNombreAleatoire.cpp.o
+/usr/bin/ranlib liblibprng.a

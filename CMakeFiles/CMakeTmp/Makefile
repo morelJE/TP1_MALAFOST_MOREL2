@@ -16,6 +16,9 @@ SUFFIXES =
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
+# Produce verbose output by default.
+VERBOSE = 1
+
 # Suppress display of executed commands.
 $(VERBOSE).SILENT:
 
@@ -42,17 +45,17 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2
+CMAKE_SOURCE_DIR = /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/CMakeFiles/CMakeTmp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build
+CMAKE_BINARY_DIR = /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/CMakeFiles/CMakeTmp
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	@echo "Running CMake cache editor..."
 	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
@@ -62,7 +65,7 @@ edit_cache/fast: edit_cache
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	@echo "Running CMake to regenerate build system..."
 	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
@@ -72,9 +75,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build/CMakeFiles /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/CMakeFiles/CMakeTmp/CMakeFiles /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/CMakeFiles/CMakeTmp/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /user/6/.base/malafost/home/2A/Modelisation/TPs/TP1_MALAFOST_MOREL2/CMakeFiles/CMakeTmp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -102,17 +105,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named libprng
+# Target rules for targets named cmTryCompileExec1145467232
 
 # Build rule for target.
-libprng: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libprng
-.PHONY : libprng
+cmTryCompileExec1145467232: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cmTryCompileExec1145467232
+.PHONY : cmTryCompileExec1145467232
 
 # fast build rule for target.
-libprng/fast:
-	$(MAKE) -f src/CMakeFiles/libprng.dir/build.make src/CMakeFiles/libprng.dir/build
-.PHONY : libprng/fast
+cmTryCompileExec1145467232/fast:
+	$(MAKE) -f CMakeFiles/cmTryCompileExec1145467232.dir/build.make CMakeFiles/cmTryCompileExec1145467232.dir/build
+.PHONY : cmTryCompileExec1145467232/fast
+
+testCXXCompiler.o: testCXXCompiler.cxx.o
+.PHONY : testCXXCompiler.o
+
+# target to build an object file
+testCXXCompiler.cxx.o:
+	$(MAKE) -f CMakeFiles/cmTryCompileExec1145467232.dir/build.make CMakeFiles/cmTryCompileExec1145467232.dir/testCXXCompiler.cxx.o
+.PHONY : testCXXCompiler.cxx.o
+
+testCXXCompiler.i: testCXXCompiler.cxx.i
+.PHONY : testCXXCompiler.i
+
+# target to preprocess a source file
+testCXXCompiler.cxx.i:
+	$(MAKE) -f CMakeFiles/cmTryCompileExec1145467232.dir/build.make CMakeFiles/cmTryCompileExec1145467232.dir/testCXXCompiler.cxx.i
+.PHONY : testCXXCompiler.cxx.i
+
+testCXXCompiler.s: testCXXCompiler.cxx.s
+.PHONY : testCXXCompiler.s
+
+# target to generate assembly for a file
+testCXXCompiler.cxx.s:
+	$(MAKE) -f CMakeFiles/cmTryCompileExec1145467232.dir/build.make CMakeFiles/cmTryCompileExec1145467232.dir/testCXXCompiler.cxx.s
+.PHONY : testCXXCompiler.cxx.s
 
 # Help Target
 help:
@@ -120,9 +147,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... cmTryCompileExec1145467232"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... libprng"
+	@echo "... testCXXCompiler.o"
+	@echo "... testCXXCompiler.i"
+	@echo "... testCXXCompiler.s"
 .PHONY : help
 
 
